@@ -124,9 +124,7 @@ public class TicTacToe {
                 return " Yay, you won!!";
             } else if (cpuPositions.containsAll(l)) {
                 return "Damn, you lost";
-            } else if (playerPositions.size() + cpuPositions.size() == 9) {
-                return "CAT";
-            }
+            } 
         }
 
         return "";
