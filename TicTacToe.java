@@ -14,19 +14,13 @@ public class TicTacToe {
                 {' ', '|', ' ', '|', ' '}};
 
         printGameBoard(gameBoard);
-        /*
-        while loop makes it so that the computer keeps
-        asking the player to continue placing the pieces.
-         */
+        
 
         while (true){
             Scanner scan = new Scanner(System.in);
             System.out.println("Enter your placement (1-9):");
             int PlayerPos = scan.nextInt();
-        /*
-        this while loop is so that the computer does not play over
-        the player's position.
-         */
+        
             while (playerPositions.contains(PlayerPos) ||
                     cpuPositions.contains(playerPositions)) {
                 System.out.println("Position is taken, enter in another position.");
@@ -34,10 +28,7 @@ public class TicTacToe {
             }
 
             placePiece(gameBoard, PlayerPos, "player");
-        /*
-        This is so that the computer generates its symbol randomly
-        throughout the game board.
-        */
+        
             Random rand = new Random();
             int cpuPos = rand.nextInt(9) + 1;
             while (playerPositions.contains(cpuPos) ||
@@ -62,10 +53,7 @@ public class TicTacToe {
         }
 
     }
-    /*
-    This method is to identify the symbols the player
-    and the cpu will be using
-     */
+   
     public static void placePiece (char [][] gameBoard, int pos, String user) {
 
         char symbol = ' ';
@@ -109,9 +97,7 @@ public class TicTacToe {
                 break;
         }
     }
-/*
-This method is to represent all the win conditions.
- */
+
     public static String checkWinner() {
 
         List topRow = Arrays.asList(1, 2, 3);
